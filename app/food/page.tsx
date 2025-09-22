@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { collection, getDocs, query } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Search, Filter } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { db } from '@/lib/firebase';
 import { initializeDatabase } from '@/lib/seed-data';
 import { FoodItem } from '@/lib/seed-data';
+import FoodCard from '@/components/FoodCard';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
@@ -158,10 +160,7 @@ export default function FoodsPage() {
         {/* Food Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredFoods.map((food) => (
-            <div key={food.id} className="bg-white rounded-lg shadow-md p-4">
-              <h3 className="font-semibold">{food.name}</h3>
-              <p className="text-gray-600">${food.price}</p>
-            </div>
+            <FoodCard key={food.id} item={food} />
           ))}
         </div>
 
