@@ -163,7 +163,7 @@ export default function OrderPage() {
                     </div>
                     
                     <div className="text-sm sm:text-lg font-medium">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      LKR {(item.price * item.quantity).toFixed(2)}
                     </div>
                   </div>
                 ))}
@@ -171,15 +171,15 @@ export default function OrderPage() {
                 <div className="mt-4 sm:mt-6 space-y-2">
                   <div className="flex justify-between text-sm sm:text-base">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>LKR {subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm sm:text-base">
                     <span>Tax</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>LKR {tax.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-lg sm:text-xl font-bold">
                     <span>Total</span>
-                    <span>${total.toFixed(2)}</span>
+                    <span>LKR {total.toFixed(2)}</span>
                   </div>
                 </div>
               </>
@@ -254,7 +254,7 @@ export default function OrderPage() {
                 disabled={isPlacingOrder || items.length === 0}
                 className="w-full bg-red-600 hover:bg-red-700 py-2 sm:py-3 text-sm sm:text-lg mt-4 sm:mt-6"
               >
-                {isPlacingOrder ? 'Placing Order...' : `Place Order - $${total.toFixed(2)}`}
+                {isPlacingOrder ? 'Placing Order...' : `Place Order - LKR ${total.toFixed(2)}`}
               </Button>
             </div>
           </div>

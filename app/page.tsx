@@ -187,7 +187,7 @@ export default function HomePage() {
                       {order.createdAt.toLocaleDateString()} {order.createdAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-gray-900 font-semibold">${order.total.toFixed(2)}</span>
+                      <span className="text-gray-900 font-semibold">LKR {order.total.toFixed(2)}</span>
                       <span className={`text-xs sm:text-sm px-2 py-1 rounded-full ${
                         order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
                         order.status === 'completed' ? 'bg-green-100 text-green-800' :
