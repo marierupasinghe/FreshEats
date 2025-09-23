@@ -8,8 +8,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import { db } from '@/lib/firebase';
 import { initializeDatabase } from '@/lib/seed-data';
 import { FoodItem } from '@/lib/seed-data';
-import FoodCard from '@/components/FoodCard';
 import { Button } from '@/components/ui/button';
+import FoodCard from '@/components/FoodCard';
 import { Input } from '@/components/ui/input';
 
 export default function HomePage() {
